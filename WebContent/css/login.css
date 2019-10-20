@@ -1,0 +1,84 @@
+body {
+    font: 100% 宋体, 新宋体;
+    background: url("../drawable/lack.jpg") no-repeat 0 0/100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.h2Div {
+    text-align : center;
+    line-height: 100px;
+    height: 5vw;
+}
+
+h2 {
+    text-align : center;
+    color: aliceblue;
+}
+
+td {
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
+    color: aliceblue;
+}
+
+.loginTable {
+    border: 1;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: 10vw
+}
+
+.inputType {
+    width: 300px;
+    height: 25px;
+    background-color: rgba(255, 255, 255, 0.397);
+}
+
+#container {
+    width: 80%; /* 这将树立一个攻下 80% 涉猎器宽度的容器 */
+    margin: 0 auto; /* 被动边距（与宽度一路）会将页面居中 */
+    text-align: left; /* 这将覆盖 body 元素上的“text-align: center”。 */
+}
+    
+#mainContent {
+    padding: 0 20px; /* 请记取，添补是 div 方块外部的空间，边距则是 div 方块外部的空间 */
+    border:2px solid grey;
+    background: rgba(133, 131, 131, 0.199);
+    margin: 10px;   
+}
+
+#divcss5 {
+    margin:0 auto;
+    widows: 50%;
+    height:50%;
+    background: #8c8c8c;
+    text-align: center
+} 
+
+.title-text span {
+    display: block;      /*设置为块级元素会独占一行形成上下居中的效果*/
+    position: relative;  /*定位横线（当横线的父元素）*/
+
+    color: #188eee;      /*居中文字的颜色*/
+    text-align: center; 
+} 
+
+.title-text span:before, .title-text span:after { 
+    content: ''; 
+    position: absolute;   /*定位背景横线的位置*/
+    top: 50%; 
+    background: #8c8c8c;   /*背景横线颜色*/
+    width: 35%;            /*单侧横线的长度*/
+    height: 1px; 
+} 
+
+.title-text span:before { 
+    left: 2%;              /*调整背景横线的左右距离*/
+} 
+
+.title-text span:after { 
+    right: 2%; 
+}

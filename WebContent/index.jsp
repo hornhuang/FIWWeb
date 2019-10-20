@@ -76,7 +76,7 @@
                     
                     <div style="width: 20%;" class="font_div ">
                         
-                        <a href="lessen/exp_2.jsp" style="color: rgba(240, 248, 255, 0)">
+                        <a href="pages/lessens.jsp" style="color: rgba(240, 248, 255, 0)">
                             
                             <p class="wrapper" style="color: white">实验</p>
 
@@ -116,7 +116,7 @@
 
                     <div style="width: 20%;" class="font_div ">
                         
-                        <a href="http://47.107.132.227/info.html" style="color: rgba(240, 248, 255, 0)">
+                        <a href="./pages/loginform.jsp" style="color: rgba(240, 248, 255, 0)">
 
                             <p class="wrapper" style="color: white">登陆</p>
 
