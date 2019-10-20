@@ -31,6 +31,7 @@
 	Statement st = con.createStatement();
 	String sql = "select * from myfriend where userid = " + id;
 	ResultSet rs = st.executeQuery(sql);
+	<>
 	if (rs.next()) {
 	%>
 		<form action="update.jsp" method="post">
@@ -41,8 +42,8 @@
 				</tr>
 				<tr>
 					<td>性别</td>
-					<td><input type="radio" name="sex" value="M" <%rs.getString(4).equals("M")?"checked":"" %> >男</td>
-					<td><input type="radio" name="sex" value="F" <%rs.getString(4).equals("F")?"checked":"" %> >女</td>
+					<--<td><input type="radio" name="sex" value="M" <%rs.getString(4).equals("M")?"checked":"" %> >男</td>
+					<--<td><input type="radio" name="sex" value="F" <%rs.getString(4).equals("F")?"checked":"" %> >女</td>
 				</tr>
 				<tr>
 					<td>年龄</td>
