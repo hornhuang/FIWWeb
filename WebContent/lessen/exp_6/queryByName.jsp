@@ -9,7 +9,7 @@
 <body>
 <h1>我的好友录</h1>
 <hr>
-<form action="ListPriendsByName.jsp" method="post">
+<form action="<%=request.getContextPath() %>/listFriends?pathName=listFriendsByName.jsp" method="post">
 	<input type="text" width="100px" name="name" >
 	<input type="submit" value="查询">
 </form>

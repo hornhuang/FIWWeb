@@ -1,3 +1,4 @@
+<%@page import="util.DBConnection"%>
 <%@page import="com.sun.scenario.effect.impl.state.LinearConvolveRenderState.PassType"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
@@ -16,8 +17,7 @@
 	<%
 	String mName     = request.getParameter("name");
 	String mPassword = request.getParameter("password");
-	Class.forName("com.mysql.jdbc.Driver");
-	Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/myfriend", "root", "qaz123456");
+	Connection con = DBConnection.getInstance().getConnection();
 	Statement st = con.createStatement();
 	ResultSet rs = st.executeQuery("select * from user");
 	while(rs.next()){

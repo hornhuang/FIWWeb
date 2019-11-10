@@ -1,3 +1,4 @@
+<%@page import="util.DBConnection"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.DriverManager"%>
@@ -11,29 +12,23 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%
-	if(session.getAttribute("name") == null) {
-		response.sendRedirect("Loginfrom.jsp");
-		return;
-	}
-	%>
 	
 	<hr/>
 	
 	<%
 	String id = request.getParameter("m1");
 	if(id == null) {
-		response.sendRedirect("ListFriend.jsp?p=" + request.getParameter("p"));
+		response.sendRedirect("listFriend.jsp?p=" + request.getParameter("p"));
 		return;
 	}
 
-	Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/myfriend?serverTimezone=GMT", "root", "qaz123456");
+	Connection con = DBConnection.getInstance().getConnection();
 	Statement st = con.createStatement();
 	String sql = "select * from myfriend where id = " + id;
 	ResultSet rs = st.executeQuery(sql);
 	if (rs.next()) {
 	%>
-		<form action="update.jsp?id=<%=rs.getString(1) %>&p=<%=request.getParameter("P") %>" method="post">
+		<form action="<%=request.getContextPath() %>/update?id=<%=rs.getString(1) %>&p=<%=request.getParameter("P") %>" method="post">
 		<input type="hidden" name="id" value="<%=rs.getString("id") %>">
 			<table>
 				<tr>
@@ -42,8 +37,8 @@
 				</tr>
 				<tr>
 					<td>性别</td>
-					<td><input type="radio" name="sex" value="M" <%=rs.getString(4).equals("F")?"checked":"" %> >男</td>
-					<td><input type="radio" name="sex" value="F" <%%> >女</td>
+					<td><input type="radio" name="sex" value="M" <%=rs.getString(4).equals("M")?"checked":"" %> >男</td>
+					<td><input type="radio" name="sex" value="F" <%=rs.getString(4).equals("F")?"checked":"" %> >女</td>
 				</tr>
 				<tr>
 					<td>年龄</td>
@@ -75,6 +70,6 @@
 	}
 	%>
 	
-	<%@ include file="Footer.jsp" %>
+	<%@ include file="footer.jsp" %>
 </body>
 </html>

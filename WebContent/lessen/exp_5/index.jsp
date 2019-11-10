@@ -9,7 +9,7 @@
 <body>
 	<%
 	if(session.getAttribute("name") == null) {
-		response.sendRedirect("Loginfrom.jsp");
+		response.sendRedirect("Loginform.jsp");
 		return;
 	}
 	%>

@@ -14,8 +14,11 @@
 </head>
 <body>
 	<% 
+	request.setCharacterEncoding("UTF-8");
 	int p = request.getParameter("p") == null ? 1 : Integer.parseInt(request.getParameter("p"));
 	int c = request.getParameter("c") == null ? 10 : Integer.parseInt(request.getParameter("c"));
+	String friendsName = request.getParameter("name");
+	out.print(friendsName);
 	%>
 	<script type="text/javascript">
 		function function1() {
@@ -60,6 +63,12 @@
 	out.println("<form action='' name='myform' method='POST'><table border = 1>");
 	out.println("<th>修改</th> <th>删除</th> <th>姓名</th> <th>性别</th> <th>年龄</th> <th>QQ</th> <th>电话</th> <th>Email</th> <th>地址</th>");
 	for(int j = 0 ; j < c ; j++) {
+		if(!rs.getString("name").contains(friendsName)) {
+			if(!rs.next()) {
+				break;
+			}
+			continue;
+		}
 		out.println("<tr>");
 		out.print("<td><input type='radio' name='m1' value='" + rs.getString(1) + "'/></td>");
 		out.print("<td><input type='checkbox' name='m2' value='" + rs.getString(1) + "'/></td>");
